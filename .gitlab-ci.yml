@@ -1,0 +1,17 @@
+stages:
+  - build
+  - test
+
+build_job:
+  stage: build
+  image: maven:3.8.7
+  script:
+    - echo "Maven compilee started"
+    - "mvn compile"
+
+test_job:
+  stage: test
+  image: maven:3.8.7
+  script:
+    - echo "Maven test start"
+    - "mvn test"
